@@ -159,6 +159,8 @@ export default function App() {
 
       <CredentialStrip />
 
+      <About />
+
       <Album
         tracks={tracks}
         currentTrackIndex={currentTrackIndex}
@@ -166,8 +168,6 @@ export default function App() {
         isPlaying={isPlaying}
         setIsPlaying={setIsPlaying}
       />
-
-      <About />
 
       <Gallery />
 

@@ -4,8 +4,8 @@ import { scrollToHash } from '../utils/scroll';
 
 const links = [
   { label: 'Watch', href: '#spotlight' },
+  { label: 'Artist', href: '#about' },
   { label: 'Listen', href: '#album' },
-  { label: 'Story', href: '#about' },
   { label: 'Photos', href: '#gallery' },
   { label: 'Buy', href: '#cta' },
 ];
