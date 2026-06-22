@@ -1,0 +1,6 @@
+{
+  "name": "Eric Gray - Love Is Here",
+  "description": "An immersive, cinematic album launch website for Eric Gray, a soul/R&B singer-songwriter.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
