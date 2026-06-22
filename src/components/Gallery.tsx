@@ -54,7 +54,7 @@ export default function Gallery() {
   return (
     <section
       id="gallery"
-      className="scroll-section section-warm-wash relative w-full py-20 md:py-24 text-cream overflow-hidden border-y border-cream-warm/10"
+      className="scroll-section section-warm-wash section-pad relative w-full text-cream overflow-hidden border-y border-cream-warm/10"
     >
       <div className="absolute right-0 top-0 w-80 h-80 blush-glow rounded-full blur-3xl opacity-45 pointer-events-none" />
       <div className="absolute left-0 bottom-0 w-64 h-64 golden-glow rounded-full blur-3xl opacity-35 pointer-events-none" />

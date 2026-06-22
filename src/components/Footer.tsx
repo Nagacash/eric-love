@@ -4,7 +4,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="scroll-section w-full bg-midnight-deeper text-cream/65 border-t border-cream/5 pt-12 pb-32 sm:pb-28 md:pb-32 px-4 sm:px-6">
+    <footer className="scroll-section w-full bg-midnight-deeper text-cream/65 border-t border-cream/5 pt-10 pb-28 sm:pb-24 md:pb-28 px-4 sm:px-6 section-pad-dock">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
 
         <div className="flex flex-col items-center md:items-start select-none">

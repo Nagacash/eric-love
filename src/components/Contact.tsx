@@ -16,7 +16,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="scroll-section relative w-full border-t border-cream/5 bg-midnight-deeper/80 pt-16 sm:pt-20 md:pt-28 pb-36 md:pb-32 px-4 sm:px-6"
+      className="scroll-section relative w-full border-t border-cream/5 bg-midnight-deeper/80 section-pad section-pad-dock px-4 sm:px-6"
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24">
         <motion.div

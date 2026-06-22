@@ -24,8 +24,8 @@ export default function About() {
       <div className="absolute top-0 right-0 w-[500px] h-[500px] blush-glow rounded-full blur-3xl opacity-52 pointer-events-none" />
       <div className="absolute bottom-1/3 left-0 w-[400px] h-[400px] golden-glow rounded-full blur-3xl opacity-38 pointer-events-none" />
 
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-12 lg:px-24 py-16 sm:py-24 lg:py-32">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-12 lg:px-24 section-pad">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
 
           <div className="col-span-1 lg:col-span-5 flex justify-center lg:justify-end">
             <motion.div
@@ -109,8 +109,8 @@ export default function About() {
         </div>
       </div>
 
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 lg:px-24 py-20 lg:py-28">
-        <div className="max-w-3xl mx-auto text-center lg:text-left lg:max-w-none lg:grid lg:grid-cols-12 lg:gap-16 lg:items-start">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-12 lg:px-24 section-pad pt-0">
+        <div className="max-w-3xl mx-auto text-center lg:text-left lg:max-w-none lg:grid lg:grid-cols-12 lg:gap-12 lg:items-start">
 
           <div className="lg:col-span-5 lg:sticky lg:top-28 mb-10 lg:mb-0">
             <motion.span

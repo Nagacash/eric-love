@@ -22,7 +22,7 @@ export default function Experience() {
   return (
     <section 
       id="experience" 
-      className="scroll-section relative w-full min-h-[100svh] md:h-[90vh] py-16 md:py-0 bg-gradient-to-b from-midnight to-midnight-deeper overflow-hidden flex flex-col justify-center items-center px-4 sm:px-6"
+      className="scroll-section relative w-full min-h-[72svh] md:min-h-[80svh] section-pad bg-gradient-to-b from-midnight to-midnight-deeper overflow-hidden flex flex-col justify-center items-center px-4 sm:px-6"
     >
       {/* Immersive animated sunset background gradient layer */}
       <div className="absolute inset-0 z-0 opacity-32 pointer-events-none">
@@ -41,7 +41,7 @@ export default function Experience() {
         </motion.div>
 
         {/* Breathing Dynamic Phrase Box */}
-        <div className="min-h-[160px] sm:min-h-[220px] flex items-center justify-center relative w-full mb-8">
+        <div className="min-h-[120px] sm:min-h-[160px] flex items-center justify-center relative w-full mb-6">
           <AnimatePresence mode="wait">
             <motion.h2
               key={activeLine}

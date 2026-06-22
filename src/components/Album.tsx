@@ -30,15 +30,15 @@ export default function Album({
   return (
     <section 
       id="album" 
-      className="scroll-section relative w-full min-h-screen py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-12 lg:px-24 pb-36 md:pb-40 bg-midnight text-cream flex items-start md:items-center"
+      className="scroll-section section-pad section-pad-dock relative w-full px-4 sm:px-6 md:px-12 lg:px-24 bg-midnight text-cream"
     >
       {/* Background radial soft light to make it look highly cinematic */}
       <div className="absolute inset-0 bg-radial-at-c from-midnight-deeper via-midnight to-midnight-deeper opacity-70 pointer-events-none" />
 
-      <div className="relative z-10 w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+      <div className="relative z-10 w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
         
         {/* Left Side: Album Cover Art gallery piece */}
-        <div className="col-span-1 lg:col-span-5 flex flex-col items-center justify-center lg:sticky lg:top-24 lg:pb-36 w-full">
+        <div className="col-span-1 lg:col-span-5 flex flex-col items-center justify-center lg:sticky lg:top-24 w-full">
           <div className="mb-5 w-full text-center sm:text-left select-none order-first">
             <h3 className="font-serif text-2xl font-semibold text-cream tracking-tight mb-1">
               Love Is Here
@@ -53,7 +53,7 @@ export default function Album({
 
         {/* Right Side: High-end Interactive Tracklist */}
         <div className="col-span-1 lg:col-span-7">
-          <div className="mb-10 text-left">
+          <div className="mb-8 text-left">
             <span className="text-amber-gold font-sans uppercase tracking-[0.25em] text-xs font-semibold block mb-3">
               The Tracklist
             </span>
@@ -63,7 +63,7 @@ export default function Album({
             <div className="w-20 h-[2px] bg-amber-gold mt-4" />
           </div>
 
-          <div className="space-y-6">
+          <div className="space-y-4">
             {tracks.map((track, idx) => {
               const isSelected = currentTrackIndex === idx;
               const isPlayingCurrent = isSelected && isPlaying;

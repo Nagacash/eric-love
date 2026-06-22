@@ -99,14 +99,14 @@ export default function CTA({ onOpenVideo }: CTAProps) {
   return (
     <section
       id="cta"
-      className="scroll-section relative w-full py-16 sm:py-24 pb-36 md:pb-36 px-4 sm:px-6 md:px-12 lg:px-24 bg-midnight text-cream flex items-center"
+      className="scroll-section section-pad section-pad-dock relative w-full px-4 sm:px-6 md:px-12 lg:px-24 bg-midnight text-cream flex items-center"
     >
         <div className="absolute top-1/2 -left-20 -translate-y-1/2 w-[400px] h-[400px] golden-glow rounded-full blur-3xl opacity-40 pointer-events-none" />
         <div className="absolute bottom-0 right-0 w-[300px] h-[300px] blush-glow rounded-full blur-3xl opacity-35 pointer-events-none" />
 
         <div className="relative z-10 w-full max-w-5xl mx-auto flex flex-col items-center">
 
-          <div className="text-center mb-12">
+          <div className="text-center mb-8 sm:mb-10">
             <span className="text-amber-gold font-sans uppercase tracking-[0.25em] text-xs font-semibold block mb-3">
               Stay Connected
             </span>
@@ -189,7 +189,7 @@ export default function CTA({ onOpenVideo }: CTAProps) {
             </div>
           </div>
 
-          <div className="mt-16 flex flex-col items-center gap-6 w-full max-w-4xl">
+          <div className="mt-10 sm:mt-12 flex flex-col items-center gap-5 w-full max-w-4xl">
             <p className="font-sans text-xs tracking-widest uppercase text-cream/50 font-semibold">
               Follow Eric Gray
             </p>
