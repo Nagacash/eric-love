@@ -17,20 +17,20 @@ interface CTAProps {
 export default function CTA({ onOpenVideo }: CTAProps) {
   const platforms = [
     {
-      name: 'Buy the Album',
+      name: 'Choose Your Price',
       icon: <DollarSign className="w-5 h-5 text-midnight-deeper" />,
       label: 'Support Eric directly via PayPal',
       url: 'https://www.paypal.com/ncp/payment/2DC7638CN9YM2',
-      cta: 'Order Direct',
+      cta: 'Choose Your Price',
       primary: true,
       external: true,
     },
     {
-      name: 'Watch "Working On It"',
+      name: 'The Love Is Here Visual Experience',
       icon: <Youtube className="w-5 h-5 text-[#FF0000]" />,
-      label: 'Official music video — plays right here',
-      videoUrl: 'https://youtu.be/2P3Z9bdR7K4',
-      videoTitle: 'Working On It',
+      label: 'Featured video — plays right here',
+      videoUrl: 'https://youtu.be/P-gJXrZfe0E',
+      videoTitle: 'The Love Is Here Visual Experience',
       cta: 'Watch Now',
       color: 'hover:border-[#FF0000]/40 hover:bg-[#FF0000]/5',
     },
@@ -50,6 +50,15 @@ export default function CTA({ onOpenVideo }: CTAProps) {
       url: 'https://www.ericgraymusician.com',
       cta: 'Coming Soon',
       color: 'hover:border-[#FC3C44]/40 hover:bg-[#FC3C44]/5',
+      external: true,
+    },
+    {
+      name: 'Featured On Elastic Stage',
+      icon: <Music className="w-5 h-5 text-amber-gold" />,
+      label: 'Read the feature',
+      url: 'https://elasticstage.com/ericgray',
+      cta: 'Read More',
+      color: 'hover:border-amber-gold/40 hover:bg-amber-gold/5',
       external: true,
     },
   ];
@@ -84,7 +93,6 @@ export default function CTA({ onOpenVideo }: CTAProps) {
   const videos = [
     { label: 'Working On It', url: 'https://youtu.be/2P3Z9bdR7K4' },
     { label: 'Video 2', url: 'https://youtu.be/c49neWVA9XQ' },
-    { label: 'Video 3', url: 'https://youtu.be/P-gJXrZfe0E' },
     { label: 'Video 4', url: 'https://youtu.be/hTVL6Bbf35E' },
     { label: 'Video 5', url: 'https://youtu.be/xGepmUSmf_o' },
   ];
@@ -189,42 +197,19 @@ export default function CTA({ onOpenVideo }: CTAProps) {
             </div>
           </div>
 
-          <div className="mt-10 sm:mt-12 flex flex-col items-center gap-5 w-full max-w-4xl">
-            <p className="font-sans text-xs tracking-widest uppercase text-cream/50 font-semibold">
-              Follow Eric Gray
-            </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              {socials.map((social) =>
-                social.videoUrl ? (
-                  <motion.button
-                    key={social.name}
-                    type="button"
-                    onClick={() => onOpenVideo(social.videoUrl!, social.videoTitle ?? social.name)}
-                    whileHover={{ scale: 1.1 }}
-                    className="focus-ring p-3 min-w-[44px] min-h-[44px] flex items-center justify-center bg-midnight border border-cream/5 text-amber-gold rounded-full hover:text-cream hover:border-amber-gold/30 transition-[color,border-color,transform,background-color] duration-300 cursor-pointer shadow-sm"
-                    title={`Watch on ${social.name}`}
-                    aria-label={`Watch video on ${social.name}`}
-                  >
-                    {social.icon}
-                  </motion.button>
-                ) : (
-                  <motion.a
-                    key={social.name}
-                    href={social.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    whileHover={{ scale: 1.1 }}
-                    className="focus-ring p-3 min-w-[44px] min-h-[44px] flex items-center justify-center bg-midnight border border-cream/5 text-amber-gold rounded-full hover:text-cream hover:border-amber-gold/30 transition-[color,border-color,transform,background-color] duration-300 cursor-pointer shadow-sm"
-                    title={social.name}
-                    aria-label={social.name}
-                  >
-                    {social.icon}
-                  </motion.a>
-                )
-              )}
+          <div className="mt-10 sm:mt-12 w-full max-w-4xl mx-auto">
+            <div className="relative w-full aspect-video rounded-sm overflow-hidden border border-cream/10 shadow-[var(--shadow-card)] bg-black">
+              <iframe
+                src="https://www.youtube.com/embed/P-gJXrZfe0E?autoplay=1&mute=1&loop=1&playlist=P-gJXrZfe0E&controls=1&rel=0&modestbranding=1&playsinline=1"
+                title="The Love Is Here Visual Experience"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                className="absolute inset-0 w-full h-full"
+              />
             </div>
+          </div>
 
-            <div className="mt-4 w-full">
+          <div className="mt-10 sm:mt-12 flex flex-col items-center gap-5 w-full max-w-4xl">
+            <div className="w-full">
               <p className="font-sans text-xs tracking-widest uppercase text-cream/50 font-semibold text-center mb-4">
                 Music Videos
               </p>
@@ -239,6 +224,42 @@ export default function CTA({ onOpenVideo }: CTAProps) {
                     {video.label}
                   </button>
                 ))}
+              </div>
+            </div>
+
+            <div className="w-full">
+              <p className="font-sans text-xs tracking-widest uppercase text-cream/50 font-semibold text-center mb-4">
+                Follow Eric Gray
+              </p>
+              <div className="flex flex-wrap justify-center gap-4">
+                {socials.map((social) =>
+                  social.videoUrl ? (
+                    <motion.button
+                      key={social.name}
+                      type="button"
+                      onClick={() => onOpenVideo(social.videoUrl!, social.videoTitle ?? social.name)}
+                      whileHover={{ scale: 1.1 }}
+                      className="focus-ring p-3 min-w-[44px] min-h-[44px] flex items-center justify-center bg-midnight border border-cream/5 text-amber-gold rounded-full hover:text-cream hover:border-amber-gold/30 transition-[color,border-color,transform,background-color] duration-300 cursor-pointer shadow-sm"
+                      title={`Watch on ${social.name}`}
+                      aria-label={`Watch video on ${social.name}`}
+                    >
+                      {social.icon}
+                    </motion.button>
+                  ) : (
+                    <motion.a
+                      key={social.name}
+                      href={social.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      whileHover={{ scale: 1.1 }}
+                      className="focus-ring p-3 min-w-[44px] min-h-[44px] flex items-center justify-center bg-midnight border border-cream/5 text-amber-gold rounded-full hover:text-cream hover:border-amber-gold/30 transition-[color,border-color,transform,background-color] duration-300 cursor-pointer shadow-sm"
+                      title={social.name}
+                      aria-label={social.name}
+                    >
+                      {social.icon}
+                    </motion.a>
+                  )
+                )}
               </div>
             </div>
           </div>

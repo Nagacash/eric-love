@@ -50,7 +50,7 @@ export default function Spotlight({ onOpenVideo }: SpotlightProps) {
           className="focus-ring inline-flex items-center justify-center gap-2 px-6 py-3 min-h-[44px] rounded-sm border border-amber-gold/35 bg-amber-gold/10 text-amber-gold font-sans text-xs sm:text-sm uppercase tracking-widest font-semibold hover:bg-amber-gold/20 hover:border-amber-gold/50 transition-[background-color,border-color,transform] duration-300 cursor-pointer"
         >
           <Play className="w-4 h-4 fill-current" />
-          Watch with Sound
+          Watch full video
           <Volume2 className="w-3.5 h-3.5 opacity-70" aria-hidden="true" />
         </button>
       </motion.div>

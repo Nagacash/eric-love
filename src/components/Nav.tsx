@@ -53,7 +53,7 @@ export default function Nav() {
               onClick={(e) => handleAnchorClick(e, '#hero')}
               className="focus-ring font-serif text-sm sm:text-base font-semibold text-cream tracking-wide hover:text-amber-gold transition-colors flex-shrink-0"
             >
-              Eric Gray
+              Eric Gray aka Eric IQ Gray
             </a>
 
             <ul className="flex items-center gap-0 sm:gap-1 overflow-x-auto scrollbar-hide max-w-[calc(100vw-6.5rem)] sm:max-w-none -mr-1 pr-1">

@@ -1,9 +1,8 @@
 import { motion, useReducedMotion } from 'motion/react';
 
 const credentials = [
-  'Executive Producer',
-  'Poor Righteous Teachers',
-  'Hip-Hop · R&B · Soul',
+  'R&B/Soul/Rap',
+  'Producer',
   'Smooth Jazz',
   'New York · LA · Europe',
 ];

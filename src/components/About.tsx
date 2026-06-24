@@ -96,7 +96,7 @@ export default function About() {
                 Eric Gray is a veteran independent producer, artist, and smooth jazz guitarist whose career spans the United States and Europe. With a foundation rooted in hip-hop and rap production, live performance, and musicianship, he continues to create music that bridges genres, generations, and real-life experience.
               </p>
               <p>
-                Based in New York and shaped by time lived in Los Angeles and Europe, Eric&apos;s career reflects both the message-driven core of hip-hop, R&amp;B, and soul — and the refined musicianship of smooth jazz. Known as Executive Producer of the legendary hip-hop group Poor Righteous Teachers, and for his contributions to the evolution of hip-hop, rap, and R&amp;B across independent scenes, Gray brings that same lyrical discipline and musical depth into a more refined, emotionally grounded sound.
+                Based in New York and shaped by time lived in Los Angeles and Europe, Eric&apos;s career reflects both the message-driven core of hip-hop, R&amp;B, and soul — and the refined musicianship of smooth jazz. Known for his contributions to the evolution of hip-hop, rap, and R&amp;B across independent scenes, Gray brings that same lyrical discipline and musical depth into a more refined, emotionally grounded sound.
               </p>
             </motion.div>
           </div>

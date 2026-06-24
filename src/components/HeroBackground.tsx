@@ -20,7 +20,7 @@ export default function HeroBackground() {
         src={heroBg}
         alt=""
         aria-hidden="true"
-        className={`absolute inset-0 w-full h-full object-cover object-[36%_28%] sm:object-[48%_36%] select-none brightness-[0.68] transition-opacity duration-700 ${
+        className={`absolute inset-0 w-full h-full object-cover object-[36%_28%] sm:object-[48%_36%] select-none brightness-[0.75] transition-opacity duration-700 ${
           useVideo && videoReady ? 'opacity-0' : 'opacity-100'
         }`}
         referrerPolicy="no-referrer"
@@ -33,15 +33,15 @@ export default function HeroBackground() {
             title=""
             tabIndex={-1}
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            className="absolute top-1/2 left-1/2 w-[177.78vh] min-w-full h-[56.25vw] min-h-full -translate-x-1/2 -translate-y-1/2 scale-[1.08] brightness-[0.68]"
+            className="absolute top-1/2 left-1/2 w-[177.78vh] min-w-full h-[56.25vw] min-h-full -translate-x-1/2 -translate-y-1/2 scale-[1.08] brightness-[0.78]"
             onLoad={() => setVideoReady(true)}
           />
         </div>
       )}
 
-      <div className="absolute inset-0 bg-gradient-to-b from-midnight-deeper/50 via-midnight/55 to-midnight-deeper/90 pointer-events-none" />
-      <div className="absolute inset-0 bg-gradient-to-r from-midnight-deeper/65 via-transparent to-midnight-deeper/40 pointer-events-none" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_35%,rgba(0,0,0,0.35)_100%)] pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-midnight-deeper/40 via-midnight/45 to-midnight-deeper/75 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-r from-midnight-deeper/52 via-transparent to-midnight-deeper/32 pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_35%,rgba(0,0,0,0.27)_100%)] pointer-events-none" />
     </>
   );
 }
