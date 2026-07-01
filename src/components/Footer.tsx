@@ -31,7 +31,16 @@ export default function Footer() {
 
         <div className="text-center md:text-right font-sans text-sm select-none">
           <p>© {currentYear} Eric Gray Music. All rights reserved.</p>
-          <p className="text-xs text-cream/65 mt-1">Independent Producer · Hip-Hop · R&amp;B · Smooth Jazz</p>
+          <p className="text-xs text-cream/65 mt-1">
+            <a
+              href="/privacy"
+              className="focus-ring text-cream/65 hover:text-amber-gold transition-colors"
+            >
+              Privacy &amp; Cookie Policy
+            </a>
+            <span className="mx-2 text-cream/30" aria-hidden="true">·</span>
+            Independent Producer · Hip-Hop · R&amp;B · Smooth Jazz
+          </p>
         </div>
 
       </div>

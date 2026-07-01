@@ -12,9 +12,12 @@ function TikTokIcon({ className }: { className?: string }) {
 
 interface CTAProps {
   onOpenVideo: (url: string, title: string) => void;
+  allowOptionalCookies?: boolean;
 }
 
-export default function CTA({ onOpenVideo }: CTAProps) {
+const FEATURED_VIDEO_URL = 'https://youtu.be/P-gJXrZfe0E';
+
+export default function CTA({ onOpenVideo, allowOptionalCookies = false }: CTAProps) {
   const platforms = [
     {
       name: 'Choose Your Price',
@@ -199,14 +202,37 @@ export default function CTA({ onOpenVideo }: CTAProps) {
 
           <div className="mt-10 sm:mt-12 w-full max-w-4xl mx-auto">
             <div className="relative w-full aspect-video rounded-sm overflow-hidden border border-cream/10 shadow-[var(--shadow-card)] bg-black">
-              <iframe
-                src="https://www.youtube.com/embed/P-gJXrZfe0E"
-                title="The Love Is Here Visual Experience"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerPolicy="strict-origin-when-cross-origin"
-                allowFullScreen
-                className="absolute inset-0 w-full h-full"
-              />
+              {allowOptionalCookies ? (
+                <iframe
+                  src="https://www.youtube.com/embed/P-gJXrZfe0E"
+                  title="The Love Is Here Visual Experience"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                  className="absolute inset-0 w-full h-full"
+                />
+              ) : (
+                <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 bg-midnight-deeper p-6 text-center">
+                  <img
+                    src={albumCoverImg}
+                    alt=""
+                    aria-hidden="true"
+                    className="absolute inset-0 h-full w-full object-cover opacity-35"
+                    referrerPolicy="no-referrer"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-midnight-deeper via-midnight-deeper/80 to-midnight-deeper/60" />
+                  <p className="relative z-10 max-w-sm font-sans text-sm leading-relaxed text-cream/75">
+                    Accept cookies to play embedded videos here, or watch directly on YouTube.
+                  </p>
+                  <button
+                    type="button"
+                    onClick={() => onOpenVideo(FEATURED_VIDEO_URL, 'The Love Is Here Visual Experience')}
+                    className="focus-ring relative z-10 min-h-[44px] rounded-sm bg-amber-gold px-5 py-2.5 font-sans text-xs font-semibold uppercase tracking-wider text-midnight-deeper transition-[background-color] duration-300 hover:bg-amber-honey"
+                  >
+                    Watch on YouTube
+                  </button>
+                </div>
+              )}
             </div>
           </div>
 

@@ -18,6 +18,8 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import AudioPlayer from './components/AudioPlayer';
 import VideoModal, { getYouTubeId } from './components/VideoModal';
+import CookieBanner from './components/CookieBanner';
+import { allowsOptionalCookies, getCookieConsent } from './utils/cookieConsent';
 import { scrollToSection } from './utils/scroll';
 import workingOnIt from './assets/tracks/Working On It (Edited Version).mp3';
 import letsGoOutTonight from './assets/tracks/Let\'s Go Out Tonight (Edited Version).mp3';
@@ -52,6 +54,9 @@ export default function App() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
   const [activeVideo, setActiveVideo] = useState<ActiveVideo | null>(null);
+  const [optionalCookiesAllowed, setOptionalCookiesAllowed] = useState(
+    () => allowsOptionalCookies(getCookieConsent()),
+  );
 
   const [cursorPos, setCursorPos] = useState({ x: -100, y: -100 });
   const [cursorHovering, setCursorHovering] = useState(false);
@@ -61,8 +66,13 @@ export default function App() {
   const scrollRafRef = useRef(0);
 
   const openVideo = useCallback((url: string, title: string) => {
-    if (getYouTubeId(url)) setActiveVideo({ url, title });
-  }, []);
+    if (!getYouTubeId(url)) return;
+    if (!optionalCookiesAllowed) {
+      window.open(url, '_blank', 'noopener,noreferrer');
+      return;
+    }
+    setActiveVideo({ url, title });
+  }, [optionalCookiesAllowed]);
 
   const closeVideo = useCallback(() => setActiveVideo(null), []);
 
@@ -173,7 +183,7 @@ export default function App() {
 
       <Experience />
 
-      <CTA onOpenVideo={openVideo} />
+      <CTA onOpenVideo={openVideo} allowOptionalCookies={optionalCookiesAllowed} />
 
       <Contact />
 
@@ -194,6 +204,11 @@ export default function App() {
         title={activeVideo?.title}
         youtubeUrl={activeVideo?.url}
         onClose={closeVideo}
+      />
+
+      <CookieBanner
+        audioDockOpen={dockVisible}
+        onConsentChange={(consent) => setOptionalCookiesAllowed(allowsOptionalCookies(consent))}
       />
     </div>
   );
