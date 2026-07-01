@@ -200,9 +200,11 @@ export default function CTA({ onOpenVideo }: CTAProps) {
           <div className="mt-10 sm:mt-12 w-full max-w-4xl mx-auto">
             <div className="relative w-full aspect-video rounded-sm overflow-hidden border border-cream/10 shadow-[var(--shadow-card)] bg-black">
               <iframe
-                src="https://www.youtube.com/embed/P-gJXrZfe0E?autoplay=1&mute=1&loop=1&playlist=P-gJXrZfe0E&controls=1&rel=0&modestbranding=1&playsinline=1"
+                src="https://www.youtube.com/embed/P-gJXrZfe0E"
                 title="The Love Is Here Visual Experience"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
                 className="absolute inset-0 w-full h-full"
               />
             </div>
