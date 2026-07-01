@@ -38,10 +38,10 @@ export default function CTA({ onOpenVideo, allowOptionalCookies = false }: CTAPr
       color: 'hover:border-[#FF0000]/40 hover:bg-[#FF0000]/5',
     },
     {
-      name: 'EricGrayMusician.com',
+      name: 'Eric Gray Official',
       icon: <Music className="w-5 h-5 text-amber-gold" />,
       label: 'Streaming links & full catalog',
-      url: 'https://www.ericgraymusician.com',
+      url: 'https://ericgray.vercel.app/',
       cta: 'Visit Site',
       color: 'hover:border-amber-gold/40 hover:bg-amber-gold/5',
       external: true,
