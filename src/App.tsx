@@ -66,13 +66,8 @@ export default function App() {
   const scrollRafRef = useRef(0);
 
   const openVideo = useCallback((url: string, title: string) => {
-    if (!getYouTubeId(url)) return;
-    if (!optionalCookiesAllowed) {
-      window.open(url, '_blank', 'noopener,noreferrer');
-      return;
-    }
-    setActiveVideo({ url, title });
-  }, [optionalCookiesAllowed]);
+    if (getYouTubeId(url)) setActiveVideo({ url, title });
+  }, []);
 
   const closeVideo = useCallback(() => setActiveVideo(null), []);
 

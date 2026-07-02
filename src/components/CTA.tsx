@@ -10,12 +10,23 @@ function TikTokIcon({ className }: { className?: string }) {
   );
 }
 
+function SpotifyIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z" />
+    </svg>
+  );
+}
+
 interface CTAProps {
   onOpenVideo: (url: string, title: string) => void;
   allowOptionalCookies?: boolean;
 }
 
-const FEATURED_VIDEO_URL = 'https://youtu.be/P-gJXrZfe0E';
+const SMOOTH_WALKER_URL = 'https://youtu.be/P-gJXrZfe0E';
+const LOVE_IS_HERE_VISUAL_URL = 'https://youtu.be/hTVL6Bbf35E';
+const APPLE_MUSIC_URL = 'https://music.apple.com/us/album/love-is-here/6780270579';
+const SPOTIFY_URL = 'https://open.spotify.com/album/2GTa9hFwwgUVP8I7m0qKWX?si=I6IaMiRkSVSaRUl4OLI7Gg';
 
 export default function CTA({ onOpenVideo, allowOptionalCookies = false }: CTAProps) {
   const platforms = [
@@ -32,7 +43,7 @@ export default function CTA({ onOpenVideo, allowOptionalCookies = false }: CTAPr
       name: 'The Love Is Here Visual Experience',
       icon: <Youtube className="w-5 h-5 text-[#FF0000]" />,
       label: 'Featured video — plays right here',
-      videoUrl: 'https://youtu.be/P-gJXrZfe0E',
+      videoUrl: LOVE_IS_HERE_VISUAL_URL,
       videoTitle: 'The Love Is Here Visual Experience',
       cta: 'Watch Now',
       color: 'hover:border-[#FF0000]/40 hover:bg-[#FF0000]/5',
@@ -49,10 +60,19 @@ export default function CTA({ onOpenVideo, allowOptionalCookies = false }: CTAPr
     {
       name: 'Apple Music',
       icon: <Disc className="w-5 h-5 text-[#FC3C44]" />,
-      label: 'Coming soon to all platforms',
-      url: 'https://www.ericgraymusician.com',
-      cta: 'Coming Soon',
+      label: 'Love Is Here — stream now',
+      url: APPLE_MUSIC_URL,
+      cta: 'Listen Now',
       color: 'hover:border-[#FC3C44]/40 hover:bg-[#FC3C44]/5',
+      external: true,
+    },
+    {
+      name: 'Spotify',
+      icon: <SpotifyIcon className="w-5 h-5 text-[#1DB954]" />,
+      label: 'Love Is Here — stream now',
+      url: SPOTIFY_URL,
+      cta: 'Listen Now',
+      color: 'hover:border-[#1DB954]/40 hover:bg-[#1DB954]/5',
       external: true,
     },
     {
@@ -96,7 +116,7 @@ export default function CTA({ onOpenVideo, allowOptionalCookies = false }: CTAPr
   const videos = [
     { label: 'Working On It', url: 'https://youtu.be/2P3Z9bdR7K4' },
     { label: 'Video 2', url: 'https://youtu.be/c49neWVA9XQ' },
-    { label: 'Video 4', url: 'https://youtu.be/hTVL6Bbf35E' },
+    { label: 'Smooth Walker', url: SMOOTH_WALKER_URL },
     { label: 'Video 5', url: 'https://youtu.be/xGepmUSmf_o' },
   ];
 
@@ -204,7 +224,7 @@ export default function CTA({ onOpenVideo, allowOptionalCookies = false }: CTAPr
             <div className="relative w-full aspect-video rounded-sm overflow-hidden border border-cream/10 shadow-[var(--shadow-card)] bg-black">
               {allowOptionalCookies ? (
                 <iframe
-                  src="https://www.youtube.com/embed/P-gJXrZfe0E"
+                  src={`https://www.youtube.com/embed/hTVL6Bbf35E`}
                   title="The Love Is Here Visual Experience"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   referrerPolicy="strict-origin-when-cross-origin"
@@ -222,14 +242,14 @@ export default function CTA({ onOpenVideo, allowOptionalCookies = false }: CTAPr
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-midnight-deeper via-midnight-deeper/80 to-midnight-deeper/60" />
                   <p className="relative z-10 max-w-sm font-sans text-sm leading-relaxed text-cream/75">
-                    Accept cookies to play embedded videos here, or watch directly on YouTube.
+                    Press play to watch in the on-site video player.
                   </p>
                   <button
                     type="button"
-                    onClick={() => onOpenVideo(FEATURED_VIDEO_URL, 'The Love Is Here Visual Experience')}
+                    onClick={() => onOpenVideo(LOVE_IS_HERE_VISUAL_URL, 'The Love Is Here Visual Experience')}
                     className="focus-ring relative z-10 min-h-[44px] rounded-sm bg-amber-gold px-5 py-2.5 font-sans text-xs font-semibold uppercase tracking-wider text-midnight-deeper transition-[background-color] duration-300 hover:bg-amber-honey"
                   >
-                    Watch on YouTube
+                    Watch Now
                   </button>
                 </div>
               )}

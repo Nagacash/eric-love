@@ -102,6 +102,7 @@ export default function VideoModal({ videoId, title, youtubeUrl, onClose }: Vide
                 src={`https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`}
                 title={title ?? 'Eric Gray music video'}
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
                 allowFullScreen
                 className="absolute inset-0 w-full h-full"
               />

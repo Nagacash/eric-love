@@ -41,7 +41,7 @@ export default function Spotlight({ onOpenVideo }: SpotlightProps) {
         </p>
 
         <p className="font-sans text-xs text-blush/75 italic mb-6">
-          Directed by Tomoya Nonoyama · Japan
+          Directed by Toma Nonoyama · Japan
         </p>
 
         <button

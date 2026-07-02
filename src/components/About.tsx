@@ -148,7 +148,7 @@ export default function About() {
                 <span className="font-serif text-xl text-amber-gold italic">Love Is Here</span> sits at the intersection of R&amp;B, soul, and rap — where spoken word, rhythm, and social messaging meet soulful arrangements and guitar-driven musicianship. The album reflects a natural artistic progression, connecting the foundation of rap with the sophistication, emotional and social depth of contemporary soul and alternative R&amp;B.
               </p>
               <p>
-                The lead focus track, <span className="font-semibold text-cream">&ldquo;Working On It,&rdquo;</span> sets the tone for the project with its central message of honesty and grace. Supported by a professionally filmed music video directed by Tomoya Nonoyama of Japan, the rollout emphasizes authenticity, consistency, and direct engagement with listeners across all platforms.
+                The lead focus track, <span className="font-semibold text-cream">&ldquo;Working On It,&rdquo;</span> sets the tone for the project with its central message of honesty and grace. Supported by a professionally filmed music video directed by Toma Nonoyama of Japan, the rollout emphasizes authenticity, consistency, and direct engagement with listeners across all platforms.
               </p>
             </motion.div>
 
@@ -169,7 +169,7 @@ export default function About() {
                 — &ldquo;Working On It&rdquo; · Eric Gray
               </p>
               <p className="font-sans text-xs text-blush/80 mt-3 pl-4 italic">
-                Video filmed &amp; directed by Tomoya Nonoyama, Japan
+                Video filmed &amp; directed by Toma Nonoyama, Japan
               </p>
             </motion.div>
           </div>
