@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import App from './App';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 
@@ -16,8 +17,18 @@ export default function Root() {
   }, []);
 
   if (isPrivacyPath(pathname)) {
-    return <PrivacyPolicy />;
+    return (
+      <>
+        <PrivacyPolicy />
+        <Analytics />
+      </>
+    );
   }
 
-  return <App />;
+  return (
+    <>
+      <App />
+      <Analytics />
+    </>
+  );
 }
