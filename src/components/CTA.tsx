@@ -35,7 +35,7 @@ export default function CTA({ onOpenVideo, allowOptionalCookies = false }: CTAPr
       icon: <DollarSign className="w-5 h-5 text-midnight-deeper" />,
       label: 'Support Eric directly via PayPal',
       url: 'https://www.paypal.com/ncp/payment/2DC7638CN9YM2',
-      cta: 'Support the Album - Choose Your Price',
+      cta: 'Choose Your Price',
       primary: true,
       external: true,
     },
@@ -112,7 +112,7 @@ export default function CTA({ onOpenVideo, allowOptionalCookies = false }: CTAPr
   ];
 
   const platformRowClass = (primary?: boolean, color?: string) =>
-    `focus-ring flex items-center justify-between p-4 min-h-[44px] rounded-sm border transition-[transform,background-color,border-color,box-shadow,filter] duration-300 cursor-pointer w-full text-left ${
+    `focus-ring flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between p-4 min-h-[44px] rounded-sm border transition-[transform,background-color,border-color,box-shadow,filter] duration-300 cursor-pointer w-full text-left ${
       primary
         ? 'bg-gradient-to-r from-amber-gold to-amber-sunset text-midnight-deeper border-transparent shadow-lg shadow-amber-gold/20 hover:brightness-105'
         : `bg-midnight-deeper border-cream/5 text-cream ${color ?? ''}`
@@ -162,18 +162,32 @@ export default function CTA({ onOpenVideo, allowOptionalCookies = false }: CTAPr
               {platforms.map((platform) => {
                 const inner = (
                   <>
-                    <div className="flex items-center gap-3">
-                      {platform.icon}
-                      <div className="flex flex-col">
-                        <span className={`font-sans text-sm font-semibold tracking-wide ${platform.primary ? 'text-midnight-deeper' : 'text-cream'}`}>
+                    <div className="flex items-start gap-3 min-w-0 w-full sm:flex-1">
+                      <div className="mt-0.5 shrink-0">{platform.icon}</div>
+                      <div className="flex min-w-0 flex-col gap-0.5">
+                        <span
+                          className={`font-sans text-sm font-semibold leading-snug tracking-wide ${
+                            platform.primary ? 'text-midnight-deeper' : 'text-cream'
+                          }`}
+                        >
                           {platform.name}
                         </span>
-                        <span className={`font-sans text-xs ${platform.primary ? 'text-midnight-deeper/70' : 'text-cream/50'} line-clamp-2 sm:line-clamp-1`}>
+                        <span
+                          className={`font-sans text-xs leading-relaxed ${
+                            platform.primary ? 'text-midnight-deeper/70' : 'text-cream/50'
+                          }`}
+                        >
                           {platform.label}
                         </span>
                       </div>
                     </div>
-                    <span className={`font-sans text-xs tracking-wider uppercase font-medium flex-shrink-0 ${platform.primary ? 'text-midnight-deeper/80' : 'text-amber-gold'}`}>
+                    <span
+                      className={`font-sans text-[11px] sm:text-xs tracking-wider uppercase font-semibold shrink-0 leading-tight ${
+                        platform.primary
+                          ? 'hidden sm:inline sm:max-w-[9rem] sm:text-right text-midnight-deeper/90 sm:pl-2'
+                          : 'self-end sm:self-auto sm:max-w-[9rem] sm:text-right text-amber-gold sm:pl-2'
+                      }`}
+                    >
                       {platform.cta}
                     </span>
                   </>
