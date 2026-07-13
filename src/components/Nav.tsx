@@ -6,9 +6,10 @@ const links = [
   { label: 'Watch', href: '#spotlight' },
   { label: 'Artist', href: '#about' },
   { label: 'Listen', href: '#album' },
-  { label: 'Buy', href: '#cta' },
   { label: 'Photos', href: '#gallery' },
 ];
+
+const BUY_HREF = '#cta';
 
 function handleAnchorClick(e: MouseEvent<HTMLAnchorElement>, href: string) {
   if (!href.startsWith('#')) return;
@@ -57,21 +58,28 @@ export default function Nav() {
               <span className="hidden sm:inline">Eric Gray aka Eric IQ Gray</span>
             </a>
 
-            <ul className="flex min-w-0 flex-1 items-center justify-end gap-0 sm:gap-1 overflow-x-auto scrollbar-hide overscroll-x-contain pl-1">
-              {links.map((link) => (
-                <li key={link.href} className="flex-shrink-0">
-                  <a
-                    href={link.href}
-                    onClick={(e) => handleAnchorClick(e, link.href)}
-                    className={`focus-ring font-sans text-[10px] sm:text-xs uppercase tracking-[0.1em] sm:tracking-widest text-cream/70 hover:text-amber-gold px-2 sm:px-3 py-2 min-h-[44px] flex items-center transition-colors whitespace-nowrap ${
-                      link.label === 'Buy' ? 'text-amber-gold/90 hover:text-amber-gold' : ''
-                    }`}
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
+            <div className="flex min-w-0 flex-1 items-center justify-end gap-2 sm:gap-3">
+              <ul className="flex min-w-0 items-center gap-0 sm:gap-1 overflow-x-auto scrollbar-hide overscroll-x-contain">
+                {links.map((link) => (
+                  <li key={link.href} className="flex-shrink-0">
+                    <a
+                      href={link.href}
+                      onClick={(e) => handleAnchorClick(e, link.href)}
+                      className="focus-ring font-sans text-[10px] sm:text-xs uppercase tracking-[0.1em] sm:tracking-widest text-cream/70 hover:text-amber-gold px-2 sm:px-3 py-2 min-h-[44px] flex items-center transition-colors whitespace-nowrap"
+                    >
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+              <a
+                href={BUY_HREF}
+                onClick={(e) => handleAnchorClick(e, BUY_HREF)}
+                className="focus-ring shrink-0 rounded-sm bg-amber-gold px-3 sm:px-4 py-2 min-h-[44px] flex items-center font-sans text-[10px] sm:text-xs font-semibold uppercase tracking-[0.12em] sm:tracking-widest text-midnight-deeper hover:bg-amber-honey transition-colors shadow-md shadow-amber-gold/25"
+              >
+                Buy
+              </a>
+            </div>
           </div>
         </motion.nav>
       )}

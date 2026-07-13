@@ -3,9 +3,10 @@ import HeroBackground from './HeroBackground';
 
 interface HeroProps {
   onListenNowClick: () => void;
+  onBuyClick: () => void;
 }
 
-export default function Hero({ onListenNowClick }: HeroProps) {
+export default function Hero({ onListenNowClick, onBuyClick }: HeroProps) {
   return (
     <section
       id="hero"
@@ -68,14 +69,14 @@ export default function Hero({ onListenNowClick }: HeroProps) {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, delay: 0.55 }}
-          className="mt-1"
+          className="mt-1 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 w-full max-w-md sm:max-w-none"
         >
           <button
             onClick={onListenNowClick}
             id="listen-now-button"
             className="focus-ring group relative px-8 py-4 min-h-[44px] bg-amber-gold hover:bg-amber-honey text-midnight-deeper font-sans font-medium text-sm tracking-wider uppercase rounded-sm transition-[background-color,transform,box-shadow] duration-300 animate-pulse-gold cursor-pointer"
           >
-            <span className="relative z-10 flex items-center gap-2">
+            <span className="relative z-10 flex items-center justify-center gap-2">
               Listen Now
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -86,6 +87,14 @@ export default function Hero({ onListenNowClick }: HeroProps) {
                 <path fillRule="evenodd" d="M3 10a.75.75 0 0 1 .75-.75h10.638L10.23 5.29a.75.75 0 1 1 1.04-1.08l5.5 5.25a.75.75 0 0 1 0 1.08l-5.5 5.25a.75.75 0 1 1-1.04-1.08l4.158-3.96H3.75A.75.75 0 0 1 3 10z" clipRule="evenodd" />
               </svg>
             </span>
+          </button>
+          <button
+            type="button"
+            onClick={onBuyClick}
+            id="buy-album-button"
+            className="focus-ring px-8 py-4 min-h-[44px] rounded-sm border border-amber-gold/50 bg-midnight-deeper/60 text-amber-gold hover:bg-amber-gold/15 hover:border-amber-gold font-sans font-medium text-sm tracking-wider uppercase transition-[background-color,border-color,transform] duration-300 cursor-pointer backdrop-blur-sm"
+          >
+            Buy Album
           </button>
         </motion.div>
       </div>

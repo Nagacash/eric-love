@@ -137,6 +137,10 @@ export default function App() {
     scrollToSection('album');
   };
 
+  const handleBuyNow = () => {
+    scrollToSection('cta');
+  };
+
   return (
     <div className={`relative min-h-screen selection:bg-amber-gold/30 selection:text-cream ${
       cursorHovering ? 'cursor-hovering' : ''
@@ -158,7 +162,7 @@ export default function App() {
 
       <Nav />
 
-      <Hero onListenNowClick={handleListenNow} />
+      <Hero onListenNowClick={handleListenNow} onBuyClick={handleBuyNow} />
 
       <Spotlight onOpenVideo={openVideo} />
 
@@ -174,11 +178,11 @@ export default function App() {
         setIsPlaying={setIsPlaying}
       />
 
+      <CTA onOpenVideo={openVideo} allowOptionalCookies={optionalCookiesAllowed} />
+
       <Gallery />
 
       <Experience />
-
-      <CTA onOpenVideo={openVideo} allowOptionalCookies={optionalCookiesAllowed} />
 
       <Contact />
 
