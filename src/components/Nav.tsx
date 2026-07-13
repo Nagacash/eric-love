@@ -6,8 +6,8 @@ const links = [
   { label: 'Watch', href: '#spotlight' },
   { label: 'Artist', href: '#about' },
   { label: 'Listen', href: '#album' },
-  { label: 'Photos', href: '#gallery' },
   { label: 'Buy', href: '#cta' },
+  { label: 'Photos', href: '#gallery' },
 ];
 
 function handleAnchorClick(e: MouseEvent<HTMLAnchorElement>, href: string) {
@@ -47,22 +47,25 @@ export default function Nav() {
           className="fixed top-0 left-0 right-0 z-50 border-b border-cream/5 bg-midnight-deeper/85 backdrop-blur-md shadow-[var(--shadow-dock)] pt-[env(safe-area-inset-top,0px)]"
           aria-label="Main navigation"
         >
-          <div className="max-w-7xl mx-auto px-3 sm:px-6 md:px-12 flex items-center justify-between gap-2 h-14 sm:h-16 min-h-[var(--nav-height)]">
+          <div className="max-w-7xl mx-auto px-3 sm:px-6 md:px-12 flex items-center justify-between gap-2 sm:gap-4 h-14 sm:h-16 min-h-[var(--nav-height)]">
             <a
               href="#hero"
               onClick={(e) => handleAnchorClick(e, '#hero')}
-              className="focus-ring font-serif text-sm sm:text-base font-semibold text-cream tracking-wide hover:text-amber-gold transition-colors flex-shrink-0"
+              className="focus-ring font-serif text-sm sm:text-base font-semibold text-cream tracking-wide hover:text-amber-gold transition-colors flex-shrink-0 max-w-[38%] sm:max-w-none truncate"
             >
-              Eric Gray aka Eric IQ Gray
+              <span className="sm:hidden">Eric Gray</span>
+              <span className="hidden sm:inline">Eric Gray aka Eric IQ Gray</span>
             </a>
 
-            <ul className="flex items-center gap-0 sm:gap-1 overflow-x-auto scrollbar-hide max-w-[calc(100vw-6.5rem)] sm:max-w-none -mr-1 pr-1">
+            <ul className="flex min-w-0 flex-1 items-center justify-end gap-0 sm:gap-1 overflow-x-auto scrollbar-hide overscroll-x-contain pl-1">
               {links.map((link) => (
                 <li key={link.href} className="flex-shrink-0">
                   <a
                     href={link.href}
                     onClick={(e) => handleAnchorClick(e, link.href)}
-                    className="focus-ring font-sans text-[9px] sm:text-xs uppercase tracking-[0.12em] sm:tracking-widest text-cream/70 hover:text-amber-gold px-1.5 sm:px-3 py-2 min-h-[44px] flex items-center transition-colors whitespace-nowrap"
+                    className={`focus-ring font-sans text-[10px] sm:text-xs uppercase tracking-[0.1em] sm:tracking-widest text-cream/70 hover:text-amber-gold px-2 sm:px-3 py-2 min-h-[44px] flex items-center transition-colors whitespace-nowrap ${
+                      link.label === 'Buy' ? 'text-amber-gold/90 hover:text-amber-gold' : ''
+                    }`}
                   >
                     {link.label}
                   </a>

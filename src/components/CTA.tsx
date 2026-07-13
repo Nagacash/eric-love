@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Music, Disc, Youtube, DollarSign, Instagram, Facebook } from 'lucide-react';
+import { Disc, Youtube, DollarSign, Instagram, Facebook } from 'lucide-react';
 import albumCoverImg from '../assets/images/eric/Render Apple Music.jpg';
 
 function TikTokIcon({ className }: { className?: string }) {
@@ -65,15 +65,6 @@ export default function CTA({ onOpenVideo, allowOptionalCookies = false }: CTAPr
       videoTitle: 'The Love Is Here Visual Experience',
       cta: 'Watch Now',
       color: 'hover:border-[#FF0000]/40 hover:bg-[#FF0000]/5',
-    },
-    {
-      name: 'Vibes Royale',
-      icon: <Music className="w-5 h-5 text-amber-gold" />,
-      label: 'Previous album — streaming links & full catalog',
-      url: 'https://ericgray.vercel.app/',
-      cta: 'Visit Site',
-      color: 'hover:border-amber-gold/40 hover:bg-amber-gold/5',
-      external: true,
     },
     {
       name: 'Buy Album as Vinyl',
