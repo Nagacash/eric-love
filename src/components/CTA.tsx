@@ -31,12 +31,21 @@ const SPOTIFY_URL = 'https://open.spotify.com/album/2GTa9hFwwgUVP8I7m0qKWX?si=I6
 export default function CTA({ onOpenVideo, allowOptionalCookies = false }: CTAProps) {
   const platforms = [
     {
-      name: 'Choose Your Price',
+      name: 'Support the Album - Choose Your Price',
       icon: <DollarSign className="w-5 h-5 text-midnight-deeper" />,
       label: 'Support Eric directly via PayPal',
       url: 'https://www.paypal.com/ncp/payment/2DC7638CN9YM2',
-      cta: 'Choose Your Price',
+      cta: 'Support the Album - Choose Your Price',
       primary: true,
+      external: true,
+    },
+    {
+      name: 'Buy Album as Vinyl',
+      icon: <Disc className="w-5 h-5 text-amber-gold" />,
+      label: 'Love Is Here — vinyl on Elastic Stage',
+      url: 'https://elasticstage.com/ericgray/releases/love-is-here-album',
+      cta: 'Buy Vinyl',
+      color: 'hover:border-amber-gold/40 hover:bg-amber-gold/5',
       external: true,
     },
     {
@@ -65,15 +74,6 @@ export default function CTA({ onOpenVideo, allowOptionalCookies = false }: CTAPr
       videoTitle: 'The Love Is Here Visual Experience',
       cta: 'Watch Now',
       color: 'hover:border-[#FF0000]/40 hover:bg-[#FF0000]/5',
-    },
-    {
-      name: 'Buy Album as Vinyl',
-      icon: <Disc className="w-5 h-5 text-amber-gold" />,
-      label: 'Love Is Here — vinyl on Elastic Stage',
-      url: 'https://elasticstage.com/ericgray/releases/love-is-here-album',
-      cta: 'Buy Vinyl',
-      color: 'hover:border-amber-gold/40 hover:bg-amber-gold/5',
-      external: true,
     },
   ];
 
