@@ -21,6 +21,8 @@
 
 Premium album launch landing page for Eric Gray's "Love Is Here" rollout. Combines embedded music video, streaming links, and direct fan support infrastructure.
 
+![Love Is Here Landing Page](https://pub.hyperagent.com/api/published/pbf01KZTV6ZC4_M9YPYA2T6JHPYSQM/9c596431-91c9-4737-91cb-b1f5e7b72ea5.png)
+
 ### Key features
 
 - **Album landing page** – music video embed with contextual information
